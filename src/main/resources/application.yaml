@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: exam2
+
+  # Configuración de la base de datos PostgreSQL en Docker
+  datasource:
+    url: jdbc:postgresql://localhost:5432/parking_db
+    username: parking_user
+    password: dev12345
+    driver-class-name: org.postgresql.Driver
+
+  # Configuración de Hibernate / JPA
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update # Crea automáticamente las tablas basándose en tus entities
+    show-sql: true # Te muestra en la consola las consultas SQL que hace Spring para que audites
+
+  # Configuración de Seguridad con AWS Cognito del curso
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_yzwNALI2A
