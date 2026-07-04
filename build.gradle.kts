@@ -20,6 +20,7 @@ repositories {
 }
 
 dependencies {
+	testImplementation("org.springframework.security:spring-security-test") // <-- Añade esta
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-oauth2-resource-server")
 	implementation("org.springframework.boot:spring-boot-starter-web")
